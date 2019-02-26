@@ -22,4 +22,3 @@ for col in list(pandas):
           " Size: ", len(arr_col))
 
 print(pandas)
-print(pandas)
