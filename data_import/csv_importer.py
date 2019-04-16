@@ -2,12 +2,18 @@ import scipy.io as sio
 import numpy as np
 import pandas as pd
 
+file_path = "E:\\Cerin_big-data\\"
+#data = spark.read.csv(file_path + "*.csv", header=True)
+data = spark.read.option("delimiter", ";").option("header", "true").csv(file_path + "*.csv")
+
+
 def import_file():       
 
+    #sc.
     all_data = pd.DataFrame()
 
     path = "E:\\Cerin_big-data\\"
-    files = ["Test-Jan-01-Jan-05.xlsx", "Test-Jul-01-Jul-05.xlsx"]
+    files = ["Test-Jan-01-Jan-05.csv", "Test-Jul-01-Jul-05.csv"]
     #files = ["Test-InvalidValues.xlsx"]
 
     for f in files:
